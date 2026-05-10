@@ -1,0 +1,70 @@
+import { SiteFooter } from "../components/SiteFooter";
+
+export default function Maternidad() {
+  return (
+    <>
+      <main className="relative min-h-screen w-full overflow-hidden text-[#f6f0e7]">
+        <div
+          className="absolute inset-0 bg-center"
+          style={{
+            backgroundImage: "url('/img/26.jpeg')",
+            backgroundSize: "100% 100%",
+          }}
+        />
+        <div className="absolute inset-0 bg-black/50" />
+
+        <section className="relative z-10 min-h-screen px-5 py-16 md:px-8 md:py-20">
+          <header className="mb-16 text-center md:mb-20">
+            <p className="mb-3 font-serif text-2xl tracking-[0.3em] md:text-3xl">
+              LIZUSH
+            </p>
+            <h1 className="font-serif text-4xl tracking-[0.2em] md:text-6xl">
+              MATERNIDAD
+            </h1>
+          </header>
+
+          <section className="mx-auto mb-16 max-w-4xl text-center md:mb-20">
+            <p className="font-serif text-2xl leading-relaxed md:text-4xl">
+              Celebramos la douceur de la vida con espacios diseñados para
+              recibir a los más pequeños.
+            </p>
+          </section>
+
+          <div className="grid gap-8 md:grid-cols-2 md:gap-10">
+            <div className="space-y-4">
+              <h2 className="font-serif text-xl tracking-[0.15em] md:text-2xl">
+                DISEÑO DE HABITACIONES INFANTILES
+              </h2>
+              <p className="text-sm leading-relaxed text-[#f6f0e7]/80 md:text-base">
+                Creamos ambientes seguros, cálidos y funcionales para los nuevos
+                miembros de la familia. Cada detalle está pensado para acompañar
+                el crecimiento y desarrollo de tu hijo.
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              <h2 className="font-serif text-xl tracking-[0.15em] md:text-2xl">
+                ESPACIOS DE MATERNIDAD
+              </h2>
+              <p className="text-sm leading-relaxed text-[#f6f0e7]/80 md:text-base">
+                Suites de madres, áreas de Lactancia y Zones de descanso
+                diseñados con sensibilidad y elegancia para proteger la
+                intimidad y el confort de la mujer.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-16 text-center md:mt-20">
+            <a
+              href="/contacto"
+              className="inline-block border border-[#f6f0e7] px-8 py-3 text-sm tracking-[0.2em] transition-colors hover:bg-[#f6f0e7] hover:text-[#1a1a1a] md:px-10 md:py-4 md:text-base"
+            >
+              CONSULTAR PROYECTO
+            </a>
+          </div>
+        </section>
+      </main>
+      <SiteFooter />
+    </>
+  );
+}
