@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(echo \"exit: $?\")",
+      "Bash(yarn install *)",
+      "Bash(yarn tsc *)",
+      "Bash(yarn lint *)",
+      "Bash(yarn dev *)",
+      "Bash(echo \"started pid $!\")",
+      "Bash(sleep 3 && cat /tmp/lizush-dev.log 2>&1 | tail -25)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(kill 34069)",
+      "Bash(ls -lt /tmp /var/folders/*/T 2>/dev/null | grep -iE \"\\(image|paste|claude|screenshot|jpg|jpeg|png\\)\" 2>/dev/null | head -20; echo \"---\"; ls -lt ~/Downloads 2>/dev/null | head -5; echo \"---\"; ls -lt ~/Desktop 2>/dev/null | head -5)",
+      "Bash(find ~/.claude /private/tmp/claude-501 -type f \\\\\\( -name \"*.jpg\" -o -name \"*.jpeg\" -o -name \"*.png\" -o -name \"*.webp\" \\\\\\) -mmin -30 2>/dev/null | head -20)",
+      "Read(//Users/josuegonzalez/Projects/Josue/lizush/public/img/**)",
+      "Read(//Users/josuegonzalez/Projects/Josue/lizush/public/**)",
+      "Read(//Users/josuegonzalez/Projects/Josue/lizush/**)",
+      "Bash(cp /Users/josuegonzalez/Projects/Josue/lizush/public/img/20.png /Users/josuegonzalez/Projects/Josue/lizush/.claude/worktrees/festive-aryabhata-212033/public/img/20.png && ls -lh /Users/josuegonzalez/Projects/Josue/lizush/.claude/worktrees/festive-aryabhata-212033/public/img/20.png)",
+      "Bash(lsof -iTCP:3000 -sTCP:LISTEN -P)",
+      "Read(//proc/82938/**)",
+      "Bash(pwdx 82938)",
+      "Bash(curl -s http://localhost:3000/proyectos/luna-suite)"
+    ]
+  }
+}
