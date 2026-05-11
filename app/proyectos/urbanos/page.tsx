@@ -46,7 +46,7 @@ const circleIcons = [
 
 export default function ProyectosUrbanos() {
   return (
-    <div className="flex flex-1 items-center justify-center bg-[#0e0805] p-4 sm:p-8">
+    <div className="flex flex-1 items-center justify-center bg-[#ece2cc] p-4 sm:p-8">
       <article
         className="relative flex w-full max-w-[1024px] aspect-[1024/1500] flex-col overflow-hidden rounded-sm shadow-2xl text-[#3a2611]"
         style={{ background: "linear-gradient(180deg,#f2e4cc 0%,#ede0c4 100%)" }}

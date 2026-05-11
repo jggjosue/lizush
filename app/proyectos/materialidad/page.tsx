@@ -25,7 +25,7 @@ const palette = [
 
 export default function MaterialidadProyecto() {
   return (
-    <div className="flex flex-1 items-center justify-center bg-[#0e0805] p-4 sm:p-8">
+    <div className="flex flex-1 items-center justify-center bg-[#ece2cc] p-4 sm:p-8">
       <article className="relative flex w-full max-w-[1024px] aspect-[1024/1500] flex-col overflow-hidden rounded-sm bg-[#f1e2c8] px-8 sm:px-14 py-10 sm:py-14 shadow-2xl ring-1 ring-[#c9a978]/40 text-[#3a2611]">
 
         {/* Header */}
