@@ -63,7 +63,7 @@ export default function SalaPolivalente() {
 
           <h1
             className="font-serif font-light leading-tight tracking-[0.08em] text-sand"
-            style={{ fontSize: "clamp(2.6rem,7.5vw,6rem), textShadow: "0 2px 28px rgba(8,5,3,0.60)" }}
+            style={{ fontSize: "clamp(2.6rem,7.5vw,6rem)", textShadow: "0 2px 28px rgba(8,5,3,0.60)" }}
           >
             SALA POLIVALENTE
           </h1>

@@ -63,7 +63,7 @@ export default function LunaSuite() {
 
           <h1
             className="font-serif font-light leading-none tracking-[0.08em] text-sand"
-            style={{ fontSize: "clamp(3rem,9vw,7.2rem), textShadow: "0 2px 28px rgba(8,5,3,0.60)" }}
+            style={{ fontSize: "clamp(3rem,9vw,7.2rem)", textShadow: "0 2px 28px rgba(8,5,3,0.60)" }}
           >
             LUNA SUITE
           </h1>
