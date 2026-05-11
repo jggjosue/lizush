@@ -1,115 +1,138 @@
-import type { ReactNode } from "react";
-import { Badge } from "./_components/Badge";
+"use client";
+import React, { useState } from "react";
+import Image from "next/image";
+import { SiteFooter } from "./components/SiteFooter";
+import { ServiceMenu } from "./components/ServiceMenu";
+import StudioHeroSection from "./components/StudioHeroSection";
+import { WellnessSalonSection } from "./components/WellnessSalonSection";
+
+import hero20 from "../public/img/20.png";
+import poster1 from "../public/img/1.png";
+import thumb21 from "../public/img/21.jpeg";
+import thumb25 from "../public/img/25.jpeg";
+import thumb26 from "../public/img/26.jpeg";
+import thumb11 from "../public/img/11.jpeg";
+import mat34 from "../public/img/34.png";
+import mat27 from "../public/img/27.png";
+import mat28 from "../public/img/28.png";
+import mat29 from "../public/img/29.png";
 
 export default function Home() {
+  const [heroLoaded, setHeroLoaded] = useState(false);
+  const [posterLoaded, setPosterLoaded] = useState(false);
+
   return (
     <>
-      {/* Full-page background: image + gradient fixed behind everything */}
-      <style>{`
-        body {
-          background-color: transparent !important;
-        }
-        body::before {
-          content: '';
-          position: fixed;
-          inset: 0;
-          z-index: -2;
-          background-image: url('/img/20.png');
-          background-size: cover;
-          background-position: center;
-        }
-        body::after {
-          content: '';
-          position: fixed;
-          inset: 0;
-          z-index: -1;
-          background: linear-gradient(
-            180deg,
-            rgba(8,5,3,0.45) 0%,
-            rgba(8,5,3,0.10) 20%,
-            rgba(8,5,3,0.05) 50%,
-            rgba(8,5,3,0.35) 80%,
-            rgba(8,5,3,0.72) 100%
-          );
-        }
-        /* Make header fully transparent on home */
-        body > header,
-        body header:first-of-type {
-          background: rgba(8,5,3,0.20) !important;
-          border-bottom-color: rgba(201,169,120,0.12) !important;
-        }
-        /* Make footer semi-transparent on home */
-        #contacto,
-        body > footer {
-          background: rgba(8,5,3,0.62) !important;
-          backdrop-filter: blur(6px);
-          -webkit-backdrop-filter: blur(6px);
-        }
-        #contacto .border-t {
-          border-color: rgba(201,169,120,0.15) !important;
-        }
-      `}</style>
-
-      {/* Page content */}
-      <div className="flex flex-1 flex-col items-center justify-between text-sand px-8 pt-16 pb-10 min-h-[calc(100vh-0px)]">
-
-        {/* Top branding */}
-        <header className="flex flex-col items-center text-center mt-10 sm:mt-16 gap-4">
-          <FlankedTitle>
-            <span
-              className="font-serif font-light tracking-[0.38em] text-sand"
-              style={{ fontSize: "clamp(3rem,9vw,6.5rem)" }}
-            >
-              LIZUSH
-            </span>
-          </FlankedTitle>
-          <p
-            className="font-serif tracking-[0.55em] text-sand-soft"
-            style={{ fontSize: "clamp(0.75rem,1.6vw,1.2rem)" }}
-          >
-            ARCHITECT STUDIO
-          </p>
-          <span aria-hidden className="block h-px w-16 bg-[#c9a978]/50" />
-          <p
-            className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 font-serif tracking-[0.28em] text-sand-soft/80"
-            style={{ fontSize: "clamp(0.6rem,1.2vw,0.95rem)" }}
-          >
-            <span>ARQUITECTURA</span>
-            <span aria-hidden className="text-[#c9a978]">•</span>
-            <span>INTERIORISMO</span>
-            <span aria-hidden className="text-[#c9a978]">•</span>
-            <span>VISUALIZACIÓN</span>
-          </p>
-        </header>
-
-        {/* Center quote */}
-        <section className="text-center px-4 max-w-[36ch]">
-          <p
-            className="font-serif italic leading-snug text-sand"
-            style={{ fontSize: "clamp(1.2rem,2.4vw,2rem)" }}
-          >
-            &ldquo;Designing spaces that communicate, inspire and connect.&rdquo;
-          </p>
-        </section>
-
-        {/* Bottom badge */}
-        <div className="flex items-center justify-center gap-6 pb-4">
-          <span className="h-px w-full max-w-[160px] bg-sand/25" />
-          <Badge />
-          <span className="h-px w-full max-w-[160px] bg-sand/25" />
+      <StudioHeroSection />
+      <div className="relative w-full font-serif text-[#4b3b33] bg-[#f6f0e7]">
+        {/* Main background image (full-bleed) */}
+        <div className="absolute inset-0 -z-20">
+          <Image
+            src={hero20}
+            alt="Fondo principal"
+            fill
+            placeholder="blur"
+            className={`object-cover object-center transition-opacity duration-700 ${heroLoaded ? "opacity-100" : "opacity-0"}`}
+            onLoadingComplete={() => setHeroLoaded(true)}
+            priority
+          />
         </div>
 
+        {/* Warm translucent overlay to match the poster aesthetic */}
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-transparent to-[#f0e6df]/80" />
+
+        <main className="relative min-h-screen w-full flex flex-col">
+          {/* Hero: split layout with title + poster preview */}
+          <section className="relative z-10 mx-auto flex w-full max-w-6xl flex-col items-stretch gap-8 px-6 py-16 md:flex-row md:items-center">
+            {/* Left: Title & actions */}
+            <div className="md:w-1/2">
+              <p className="font-serif text-6xl tracking-[0.6em] text-[#5b3f2e] md:text-8xl">ESPACIOS SAGRADOS</p>
+              <div className="mt-6 max-w-xl">
+                <h2 className="font-serif text-2xl text-[#8b6b55]">Iglesia Nayarit — Arquitectura espiritual</h2>
+                <p className="mt-4 text-sm text-[#4b3b33]">Un espacio espiritual contemporáneo donde la materialidad, la luz y el simbolismo construyen una atmósfera de calma, introspección y conexión.</p>
+              </div>
+
+              <div className="mt-8 flex gap-4">
+                <a href="/iglesia-nayarit" className="inline-block rounded border border-[#7b5b3d] bg-[#7b5b3d] px-6 py-3 text-sm font-medium text-white transition hover:opacity-95">VER PROYECTO</a>
+                <a href="/contacto" className="inline-block rounded border border-[#855e3b] px-6 py-3 text-sm font-medium text-[#855e3b] bg-transparent">CONTACTAR</a>
+              </div>
+
+              <div className="mt-6">
+                <ServiceMenu />
+              </div>
+            </div>
+
+            {/* Right: Poster / image card using assets from public/img (next/image) */}
+            <div className="md:w-1/2">
+              <div className="relative mx-auto w-full max-w-md overflow-hidden rounded-md border border-[#e2d6cc] bg-[#fffaf6]/80 shadow-lg">
+                {/* Poster background image */}
+                <div className="relative h-[540px] w-full">
+                  <Image
+                    src={poster1}
+                    alt="Poster Iglesia Nayarit"
+                    fill
+                    placeholder="blur"
+                    className={`object-cover object-center transition-opacity duration-700 ${posterLoaded ? "opacity-100" : "opacity-0"}`}
+                    onLoadingComplete={() => setPosterLoaded(true)}
+                    priority
+                  />
+                </div>
+              </div>
+
+              {/* Small gallery strip using some images from public/img */}
+              <div className="mt-4 flex gap-3">
+                <div className="h-20 w-20 flex-shrink-0 rounded-sm overflow-hidden relative">
+                  <Image src={thumb21} alt="Detalle 1" fill placeholder="blur" className="object-cover object-center" />
+                </div>
+                <div className="h-20 w-20 flex-shrink-0 rounded-sm overflow-hidden relative">
+                  <Image src={thumb25} alt="Detalle 2" fill placeholder="blur" className="object-cover object-center" />
+                </div>
+                <div className="h-20 w-20 flex-shrink-0 rounded-sm overflow-hidden relative">
+                  <Image src={thumb26} alt="Detalle 3" fill placeholder="blur" className="object-cover object-center" />
+                </div>
+                <div className="h-20 w-20 flex-shrink-0 rounded-sm overflow-hidden relative">
+                  <Image src={thumb11} alt="Detalle 4" fill placeholder="blur" className="object-cover object-center" />
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Secondary section: Materials & philosophy */}
+          <section className="z-10 mx-auto w-full max-w-6xl px-6 py-12">
+            <div className="rounded-md bg-white/70 p-8 shadow-sm">
+              <h3 className="font-serif text-2xl text-[#7b5b3d]">Arquitectura que trasciende</h3>
+              <p className="mt-4 text-sm text-[#5a4a3f]">Materiales naturales, luz calibrada y una paleta que conecta lo físico con lo espiritual. Proyectos residenciales y de espacios sagrados con atención al detalle y oficio.</p>
+
+              <div className="mt-6 grid grid-cols-2 gap-4 md:grid-cols-4">
+                <div className="flex flex-col items-start gap-2">
+                  <Image src={mat34} alt="Piedra travertino" width={64} height={64} placeholder="blur" className="rounded" />
+                  <p className="text-xs text-[#5a4a3f]">Piedra travertino</p>
+                </div>
+
+                <div className="flex flex-col items-start gap-2">
+                  <Image src={mat27} alt="Madera natural" width={64} height={64} placeholder="blur" className="rounded" />
+                  <p className="text-xs text-[#5a4a3f]">Madera natural</p>
+                </div>
+
+                <div className="flex flex-col items-start gap-2">
+                  <Image src={mat28} alt="Vidrio" width={64} height={64} placeholder="blur" className="rounded" />
+                  <p className="text-xs text-[#5a4a3f]">Vidrio</p>
+                </div>
+
+                <div className="flex flex-col items-start gap-2">
+                  <Image src={mat29} alt="Metal mate" width={64} height={64} placeholder="blur" className="rounded" />
+                  <p className="text-xs text-[#5a4a3f]">Metal mate</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Nueva sección: Wellness Salon — Lucerne, Switzerland */}
+          <WellnessSalonSection />
+
+          <SiteFooter />
+        </main>
       </div>
     </>
-  );
-}
-
-function FlankedTitle({ children }: { children: ReactNode }) {
-  return (
-    <div className="flex w-full items-center justify-center gap-4 sm:gap-6">
-      <span className="h-px flex-1 max-w-[160px] bg-sand/35" />
-      {children}
-      <span className="h-px flex-1 max-w-[160px] bg-sand/35" />
-    </div>
   );
 }

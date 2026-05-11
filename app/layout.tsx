@@ -23,8 +23,7 @@ const dancing = Dancing_Script({
 
 export const metadata: Metadata = {
   title: "Lizush Architect Studio",
-  description:
-    "Arquitectura, interiorismo y visualización. Designing spaces that communicate, inspire and connect.",
+  description: "Arquitectura, interiorismo y visualización. Designing spaces that communicate, inspire and connect por Lizush Architect Studio.",
 };
 
 export default function RootLayout({
