@@ -2,7 +2,7 @@ import { Badge } from "../../_components/Badge";
 
 export default function IglesiaNayaritInterior() {
   return (
-    <div className="flex flex-1 items-center justify-center bg-[#0e0805] p-4 sm:p-8">
+    <div className="flex flex-1 items-center justify-center bg-[#ece2cc] p-4 sm:p-8">
       <article
         className="relative flex w-full max-w-[1024px] aspect-[1024/1500] flex-col overflow-hidden rounded-sm shadow-2xl"
         style={{ background: "linear-gradient(180deg, #f1e2c8 0%, #ede0c4 100%)" }}
