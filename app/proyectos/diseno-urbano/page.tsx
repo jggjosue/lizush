@@ -46,43 +46,11 @@ const CircleIcon = ({ i }: { i: number }) => {
 
 export default function DisenoUrbano() {
   return (
-    <>
-      <style>{`
-        body {
-          background-color: transparent !important;
-        }
-        body::before {
-          content: '';
-          position: fixed;
-          inset: 0;
-          z-index: -2;
-          background-color: #ede5d0;
-        }
-        body::after {
-          content: none;
-        }
-        body > header,
-        body header:first-of-type {
-          background: rgba(237,229,208,0.88) !important;
-          border-bottom-color: rgba(176,134,84,0.20) !important;
-          backdrop-filter: blur(8px) !important;
-          -webkit-backdrop-filter: blur(8px) !important;
-        }
-        #contacto,
-        body > footer {
-          background: rgba(205,190,165,0.92) !important;
-          backdrop-filter: blur(6px);
-          -webkit-backdrop-filter: blur(6px);
-        }
-        #contacto .border-t {
-          border-color: rgba(176,134,84,0.20) !important;
-        }
-      `}</style>
-    <div className="flex flex-1 items-center justify-center p-4 sm:p-8">
+    <div className="flex flex-1 items-center justify-center bg-[#0e0805] p-4 sm:p-8">
       <article
         className="relative flex w-full max-w-[1024px] aspect-[1024/1500] flex-col overflow-hidden rounded-sm shadow-2xl text-[#3a2611]"
-          style={{ background: "rgba(237,229,208,0.45)" }}
-        >
+        style={{ background: "linear-gradient(180deg,#f2e4cc 0%,#ede0c4 100%)" }}
+      >
         <div
           aria-hidden
           className="pointer-events-none absolute inset-[10px] z-10 rounded-[2px]"
@@ -101,13 +69,13 @@ export default function DisenoUrbano() {
               <span className="h-px flex-1 bg-[#b08654]/55" />
             </div>
             <h1
-              className="font-serif font-light tracking-[0.10em] leading-[1.0] text-[#3a2611]"
+              className="font-serif font-semibold tracking-[0.04em] leading-[1.0] text-[#3a2611]"
               style={{ fontSize: "clamp(1.8rem,4.8vw,3.8rem)" }}
             >
               DISEÑO URBANO
               <br />Y PLAN MAESTRO
             </h1>
-            <span aria-hidden className="mt-1.5 block h-px w-20 bg-[#b08654]/60" />
+            <span aria-hidden className="mt-1.5 block h-px w-10 bg-[#b08654]/60" />
             <p className="mt-1 font-serif italic text-[#3a2611]/70" style={{ fontSize: "clamp(0.58rem,0.85vw,0.75rem)" }}>
               Entornos estratégicos, humanos y sostenibles que integran paisaje, arquitectura y experiencia.
             </p>
@@ -136,7 +104,7 @@ export default function DisenoUrbano() {
 
             {/* Right: CONCEPTO + icons + compass + plan */}
             <div className="flex flex-col gap-2 pt-1">
-              <h2 className="font-serif font-light tracking-[0.10em]" style={{ fontSize: "clamp(0.78rem,1.2vw,1rem)" }}>
+              <h2 className="font-serif font-semibold tracking-[0.06em]" style={{ fontSize: "clamp(0.78rem,1.2vw,1rem)" }}>
                 CONCEPTO
               </h2>
               <p className="font-serif leading-relaxed text-[#3a2611]/85" style={{ fontSize: "clamp(0.56rem,0.8vw,0.7rem)" }}>
@@ -152,7 +120,7 @@ export default function DisenoUrbano() {
                     >
                       <ConceptIcon i={i} />
                     </div>
-                    <span className="font-serif tracking-[0.14em] text-[#b08654] whitespace-pre-line leading-tight" style={{ fontSize: "clamp(0.46rem,0.65vw,0.58rem)" }}>
+                    <span className="font-serif tracking-[0.14em] text-[#3a2611]/80 whitespace-pre-line leading-tight" style={{ fontSize: "clamp(0.46rem,0.65vw,0.58rem)" }}>
                       {item.label}
                     </span>
                   </li>
@@ -220,6 +188,5 @@ export default function DisenoUrbano() {
         </div>
       </article>
     </div>
-    </>
   );
 }

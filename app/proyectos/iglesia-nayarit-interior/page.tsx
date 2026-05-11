@@ -2,43 +2,11 @@ import { Badge } from "../../_components/Badge";
 
 export default function IglesiaNayaritInterior() {
   return (
-    <>
-      <style>{`
-        body {
-          background-color: transparent !important;
-        }
-        body::before {
-          content: '';
-          position: fixed;
-          inset: 0;
-          z-index: -2;
-          background-color: #e8ddd0;
-        }
-        body::after {
-          content: none;
-        }
-        body > header,
-        body header:first-of-type {
-          background: rgba(232,221,208,0.88) !important;
-          border-bottom-color: rgba(176,134,84,0.20) !important;
-          backdrop-filter: blur(8px) !important;
-          -webkit-backdrop-filter: blur(8px) !important;
-        }
-        #contacto,
-        body > footer {
-          background: rgba(205,190,170,0.92) !important;
-          backdrop-filter: blur(6px);
-          -webkit-backdrop-filter: blur(6px);
-        }
-        #contacto .border-t {
-          border-color: rgba(176,134,84,0.20) !important;
-        }
-      `}</style>
-    <div className="flex flex-1 items-center justify-center p-4 sm:p-8">
+    <div className="flex flex-1 items-center justify-center bg-[#0e0805] p-4 sm:p-8">
       <article
-        className="relative flex w-full max-w-[1024px] aspect-[1024/1500] flex-col overflow-hidden rounded-sm shadow-2xl text-[#3a2611]"
-          style={{ background: "rgba(232,221,208,0.45)" }}
-        >
+        className="relative flex w-full max-w-[1024px] aspect-[1024/1500] flex-col overflow-hidden rounded-sm shadow-2xl"
+        style={{ background: "linear-gradient(180deg, #f1e2c8 0%, #ede0c4 100%)" }}
+      >
         {/* Border frame */}
         <div
           aria-hidden
@@ -109,7 +77,7 @@ export default function IglesiaNayaritInterior() {
             </p>
 
             <p
-              className="mt-2 font-serif italic text-[#b08654] leading-relaxed"
+              className="mt-2 font-serif italic text-[#3a2611]/80 leading-relaxed"
               style={{ fontSize: "clamp(0.75rem,1.1vw,0.95rem)" }}
             >
               Diseño espiritual contemporáneo donde la luz,
@@ -124,6 +92,5 @@ export default function IglesiaNayaritInterior() {
         </div>
       </article>
     </div>
-    </>
   );
 }

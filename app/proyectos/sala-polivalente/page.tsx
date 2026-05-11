@@ -53,7 +53,7 @@ export default function SalaPolivalente() {
           <div className="flex w-full max-w-[360px] items-center gap-4">
             <span className="h-px flex-1 bg-[#c9a978]/65" />
             <span
-              className="font-serif tracking-[0.58em] text-[#c9a978]"
+              className="font-serif tracking-[0.52em] text-[#c9a978]"
               style={{ fontSize: "clamp(0.62rem,0.92vw,0.80rem)" }}
             >
               PROYECTO
@@ -62,16 +62,16 @@ export default function SalaPolivalente() {
           </div>
 
           <h1
-            className="font-serif font-light leading-tight tracking-[0.08em] text-sand"
-            style={{ fontSize: "clamp(2.6rem,7.5vw,6rem)", textShadow: "0 2px 28px rgba(8,5,3,0.60)" }}
+            className="font-serif font-light leading-tight tracking-[0.04em] text-sand"
+            style={{ fontSize: "clamp(2.6rem,7.5vw,6rem)" }}
           >
             SALA POLIVALENTE
           </h1>
 
-          <span aria-hidden className="block h-px w-20 bg-[#c9a978]/80" />
+          <span aria-hidden className="block h-px w-16 bg-[#c9a978]/75" />
 
           <p
-            className="font-serif tracking-[0.58em] text-[#c9a978]"
+            className="font-serif tracking-[0.52em] text-[#c9a978]"
             style={{ fontSize: "clamp(0.68rem,1.05vw,0.90rem)" }}
           >
             PLAN MAESTRO CERDA
