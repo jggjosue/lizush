@@ -72,43 +72,11 @@ const FooterIcon = ({ index }: { index: number }) => {
 
 export default function CommunityPlaza() {
   return (
-    <>
-      <style>{`
-        body {
-          background-color: transparent !important;
-        }
-        body::before {
-          content: '';
-          position: fixed;
-          inset: 0;
-          z-index: -2;
-          background-color: #e8ddd0;
-        }
-        body::after {
-          content: none;
-        }
-        body > header,
-        body header:first-of-type {
-          background: rgba(232,221,208,0.88) !important;
-          border-bottom-color: rgba(176,134,84,0.20) !important;
-          backdrop-filter: blur(8px) !important;
-          -webkit-backdrop-filter: blur(8px) !important;
-        }
-        #contacto,
-        body > footer {
-          background: rgba(205,190,170,0.92) !important;
-          backdrop-filter: blur(6px);
-          -webkit-backdrop-filter: blur(6px);
-        }
-        #contacto .border-t {
-          border-color: rgba(176,134,84,0.20) !important;
-        }
-      `}</style>
-    <div className="flex flex-1 items-center justify-center p-4 sm:p-8">
+    <div className="flex flex-1 items-center justify-center bg-[#0e0805] p-4 sm:p-8">
       <article
         className="relative flex w-full max-w-[1024px] aspect-[1024/1500] flex-col overflow-hidden rounded-sm shadow-2xl text-[#3a2611]"
-          style={{ background: "rgba(232,221,208,0.45)" }}
-        >
+        style={{ background: "linear-gradient(180deg,#f2e4cc 0%,#ede0c4 100%)" }}
+      >
         {/* Frame border */}
         <div
           aria-hidden
@@ -131,12 +99,12 @@ export default function CommunityPlaza() {
               <span className="h-px flex-1 bg-[#b08654]/55" />
             </div>
             <h1
-              className="font-serif font-light tracking-[0.10em] leading-none text-[#3a2611]"
+              className="font-serif font-semibold tracking-[0.06em] leading-none text-[#3a2611]"
               style={{ fontSize: "clamp(1.9rem,5vw,4rem)" }}
             >
               COMMUNITY PLAZA
             </h1>
-            <span aria-hidden className="mt-1.5 block h-px w-20 bg-[#b08654]/60" />
+            <span aria-hidden className="mt-1.5 block h-px w-10 bg-[#b08654]/60" />
             <p
               className="mt-1 font-serif tracking-[0.22em] text-[#3a2611]/65"
               style={{ fontSize: "clamp(0.52rem,0.75vw,0.65rem)" }}
@@ -161,7 +129,7 @@ export default function CommunityPlaza() {
             />
             <div className="flex flex-col gap-2 pt-1">
               <h2
-                className="font-serif font-light tracking-[0.10em]"
+                className="font-serif font-semibold tracking-[0.06em]"
                 style={{ fontSize: "clamp(0.82rem,1.3vw,1.05rem)" }}
               >
                 CONCEPTO
@@ -185,7 +153,7 @@ export default function CommunityPlaza() {
                       <ConceptIcon index={i} />
                     </div>
                     <span
-                      className="font-serif tracking-[0.16em] text-[#b08654] whitespace-pre-line leading-tight"
+                      className="font-serif tracking-[0.16em] text-[#3a2611]/80 whitespace-pre-line leading-tight"
                       style={{ fontSize: "clamp(0.48rem,0.68vw,0.6rem)" }}
                     >
                       {item.label}
@@ -295,6 +263,5 @@ export default function CommunityPlaza() {
         </div>
       </article>
     </div>
-    </>
   );
 }

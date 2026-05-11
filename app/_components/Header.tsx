@@ -4,21 +4,8 @@ import Link from "next/link";
 import { useState, useRef } from "react";
 import { usePathname } from "next/navigation";
 
-// Pages that use a light (beige) background — header/footer switch to dark brown text
-const LIGHT_PAGES = [
-  "/servicios",
-  "/about",
-  "/por-que-elegirnos",
-  "/proceso-diseno",
-  "/proyectos/materialidad",
-  "/proyectos/iglesia-nayarit",
-  "/proyectos/iglesia-nayarit-interior",
-  "/proyectos/wellness-salon",
-  "/proyectos/interior-design",
-  "/proyectos/community-plaza",
-  "/proyectos/urbanos",
-  "/proyectos/diseno-urbano",
-];
+// Pages that use a light (beige) background
+const LIGHT_PAGES = ["/servicios", "/about", "/por-que-elegirnos", "/proceso-diseno"];
 
 type NavItem = {
   href: string;
@@ -138,7 +125,7 @@ export function Header() {
   const isLight = LIGHT_PAGES.includes(pathname);
 
   const headerBg = isLight
-    ? "bg-[#e8ddd0]/88 border-[#b08654]/22 backdrop-blur-md"
+    ? "bg-[#e8ddd0]/82 border-[#b08654]/20 backdrop-blur"
     : "bg-[#0e0805]/85 border-sand/10 backdrop-blur supports-[backdrop-filter]:bg-[#0e0805]/70";
 
   return (
