@@ -22,8 +22,42 @@ const materiales = [
 
 export default function IglesiaNayarit() {
   return (
-    <div className="flex flex-1 items-center justify-center bg-[#0e0805] p-4 sm:p-8">
-      <article className="relative flex w-full max-w-[1024px] aspect-[1024/1500] flex-col overflow-hidden rounded-sm bg-[#f1e2c8] shadow-2xl ring-1 ring-[#c9a978]/40 text-[#3a2611]">
+    <>
+      <style>{`
+        body {
+          background-color: transparent !important;
+        }
+        body::before {
+          content: '';
+          position: fixed;
+          inset: 0;
+          z-index: -2;
+          background-color: #e8ddd0;
+        }
+        body::after {
+          content: none;
+        }
+        body > header,
+        body header:first-of-type {
+          background: rgba(232,221,208,0.88) !important;
+          border-bottom-color: rgba(176,134,84,0.20) !important;
+          backdrop-filter: blur(8px) !important;
+          -webkit-backdrop-filter: blur(8px) !important;
+        }
+        #contacto,
+        body > footer {
+          background: rgba(205,190,170,0.92) !important;
+          backdrop-filter: blur(6px);
+          -webkit-backdrop-filter: blur(6px);
+        }
+        #contacto .border-t {
+          border-color: rgba(176,134,84,0.20) !important;
+        }
+      `}</style>
+    <div className="flex flex-1 items-center justify-center p-4 sm:p-8">
+      <article className="relative flex w-full max-w-[1024px] aspect-[1024/1500] flex-col overflow-hidden rounded-sm  shadow-2xl text-[#3a2611]"
+          style={{ background: "rgba(232,221,208,0.45)" }}
+        >
 
         {/* Top header */}
         <header className="flex flex-col items-center pt-8 sm:pt-10 px-8 sm:px-14 text-center">
@@ -58,7 +92,7 @@ export default function IglesiaNayarit() {
           <div className="flex flex-col gap-3">
             <div>
               <h2
-                className="font-serif font-semibold tracking-[0.04em] leading-tight"
+                className="font-serif font-light tracking-[0.10em] leading-tight"
                 style={{ fontSize: "clamp(1.1rem,2.2vw,1.8rem)" }}
               >
                 IGLESIA NAYARIT
@@ -71,7 +105,7 @@ export default function IglesiaNayarit() {
               </p>
             </div>
 
-            <span aria-hidden className="block h-px w-10 bg-[#b08654]/60" />
+            <span aria-hidden className="block h-px w-20 bg-[#b08654]/60" />
 
             <p
               className="font-serif leading-relaxed text-[#3a2611]/90"
@@ -111,7 +145,7 @@ export default function IglesiaNayarit() {
                     aria-hidden
                   />
                   <span
-                    className="font-serif tracking-[0.14em] text-[#3a2611]/80 text-center whitespace-pre-line leading-tight"
+                    className="font-serif tracking-[0.14em] text-[#b08654] text-center whitespace-pre-line leading-tight"
                     style={{ fontSize: "clamp(0.45rem,0.65vw,0.58rem)" }}
                   >
                     {m.label}
@@ -125,7 +159,7 @@ export default function IglesiaNayarit() {
 
             {/* City */}
             <span
-              className="font-serif tracking-[0.32em] text-[#3a2611]/80"
+              className="font-serif tracking-[0.32em] text-[#b08654]"
               style={{ fontSize: "clamp(0.58rem,0.8vw,0.7rem)" }}
             >
               CIUDAD DE MÉXICO, MX
@@ -134,5 +168,6 @@ export default function IglesiaNayarit() {
         </section>
       </article>
     </div>
+    </>
   );
 }

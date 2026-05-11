@@ -53,7 +53,7 @@ export default function ExperienciaGastronomica() {
           <div className="flex w-full max-w-[360px] items-center gap-4">
             <span className="h-px flex-1 bg-[#c9a978]/65" />
             <span
-              className="font-serif tracking-[0.52em] text-[#c9a978]"
+              className="font-serif tracking-[0.58em] text-[#c9a978]"
               style={{ fontSize: "clamp(0.62rem,0.92vw,0.80rem)" }}
             >
               PROYECTO
@@ -70,10 +70,10 @@ export default function ExperienciaGastronomica() {
             GASTRONÓMICA
           </h1>
 
-          <span aria-hidden className="block h-px w-16 bg-[#c9a978]/75" />
+          <span aria-hidden className="block h-px w-20 bg-[#c9a978]/80" />
 
           <p
-            className="font-serif tracking-[0.52em] text-[#c9a978]"
+            className="font-serif tracking-[0.58em] text-[#c9a978]"
             style={{ fontSize: "clamp(0.68rem,1.05vw,0.90rem)" }}
           >
             ESTADO DE MÉXICO

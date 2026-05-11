@@ -70,11 +70,43 @@ const projects: Project[] = [
 
 export default function InteriorDesign() {
   return (
-    <div className="flex flex-1 items-center justify-center bg-[#0e0805] p-4 sm:p-8">
+    <>
+      <style>{`
+        body {
+          background-color: transparent !important;
+        }
+        body::before {
+          content: '';
+          position: fixed;
+          inset: 0;
+          z-index: -2;
+          background-color: #f0e8d8;
+        }
+        body::after {
+          content: none;
+        }
+        body > header,
+        body header:first-of-type {
+          background: rgba(240,232,216,0.88) !important;
+          border-bottom-color: rgba(176,134,84,0.20) !important;
+          backdrop-filter: blur(8px) !important;
+          -webkit-backdrop-filter: blur(8px) !important;
+        }
+        #contacto,
+        body > footer {
+          background: rgba(210,195,172,0.92) !important;
+          backdrop-filter: blur(6px);
+          -webkit-backdrop-filter: blur(6px);
+        }
+        #contacto .border-t {
+          border-color: rgba(176,134,84,0.20) !important;
+        }
+      `}</style>
+    <div className="flex flex-1 items-center justify-center p-4 sm:p-8">
       <article
         className="relative flex w-full max-w-[1024px] aspect-[1024/1500] flex-col overflow-hidden rounded-sm shadow-2xl text-[#3a2611]"
-        style={{ background: "linear-gradient(180deg,#f2e4cc 0%,#ede0c4 100%)" }}
-      >
+          style={{ background: "rgba(240,232,216,0.45)" }}
+        >
         {/* Frame */}
         <div
           aria-hidden
@@ -108,7 +140,7 @@ export default function InteriorDesign() {
             >
               ESPACIOS QUE TRANSMITEN CALIDEZ, CONFORT Y AUTENTICIDAD.
             </p>
-            <span aria-hidden className="mt-1 block h-px w-10 bg-[#b08654]/60" />
+            <span aria-hidden className="mt-1 block h-px w-20 bg-[#b08654]/60" />
           </header>
 
           {/* Two project rows */}
@@ -228,7 +260,7 @@ export default function InteriorDesign() {
               <Leaf className="h-4 w-4 text-[#b08654]" />
             </div>
             <p
-              className="font-serif italic leading-relaxed text-[#3a2611]/80 flex-1"
+              className="font-serif italic leading-relaxed text-[#b08654] flex-1"
               style={{ fontSize: "clamp(0.6rem,0.85vw,0.75rem)" }}
             >
               Cada proyecto nace del equilibrio entre funcionalidad, belleza y bienestar,
@@ -252,5 +284,6 @@ export default function InteriorDesign() {
         </div>
       </article>
     </div>
+    </>
   );
 }
