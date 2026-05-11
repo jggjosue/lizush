@@ -51,22 +51,22 @@ export default function WellnessSalonEspera() {
         {/* Top label */}
         <header className="flex flex-col items-center text-center mt-8 sm:mt-14 gap-3">
           <div className="flex items-center gap-3 w-full max-w-[320px]">
-            <span className="h-px flex-1 bg-[#c9a978]/45" />
+            <span className="h-px flex-1 bg-[#c9a978]/55" />
             <span
-              className="font-serif tracking-[0.44em] text-[#c9a978]"
+              className="font-serif tracking-[0.58em] text-[#c9a978]"
               style={{ fontSize: "clamp(0.54rem,0.82vw,0.70rem)" }}
             >
               WELLNESS STUDIO
             </span>
-            <span className="h-px flex-1 bg-[#c9a978]/45" />
+            <span className="h-px flex-1 bg-[#c9a978]/55" />
           </div>
           <h1
-            className="font-serif font-light leading-tight tracking-[0.04em] text-sand"
-            style={{ fontSize: "clamp(2rem,5.5vw,4.4rem)" }}
+            className="font-serif font-light leading-tight tracking-[0.08em] text-sand"
+            style={{ fontSize: "clamp(2rem,5.5vw,4.4rem)", textShadow: "0 2px 28px rgba(8,5,3,0.60)" }}
           >
             SALÓN DE ESPERA
           </h1>
-          <span aria-hidden className="block h-px w-14 bg-[#c9a978]/55" />
+          <span aria-hidden className="block h-px w-20 bg-[#c9a978]/80" />
           <p
             className="font-serif tracking-[0.32em] text-sand-soft/80"
             style={{ fontSize: "clamp(0.58rem,0.88vw,0.76rem)" }}
@@ -99,7 +99,8 @@ export default function WellnessSalonEspera() {
         </section>
 
         {/* Bottom branding */}
-        <footer className="flex flex-col items-center gap-1 text-center pb-4">
+        <footer className="flex flex-col items-center gap-2 text-center pb-4">
+          <Leaf className="h-6 w-6 text-[#c9a978]" />
           <span
             className="font-serif font-light tracking-[0.42em] text-sand"
             style={{ fontSize: "clamp(1.2rem,2vw,1.7rem)" }}

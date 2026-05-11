@@ -25,8 +25,42 @@ const palette = [
 
 export default function MaterialidadProyecto() {
   return (
-    <div className="flex flex-1 items-center justify-center bg-[#0e0805] p-4 sm:p-8">
-      <article className="relative flex w-full max-w-[1024px] aspect-[1024/1500] flex-col overflow-hidden rounded-sm bg-[#f1e2c8] px-8 sm:px-14 py-10 sm:py-14 shadow-2xl ring-1 ring-[#c9a978]/40 text-[#3a2611]">
+    <>
+      <style>{`
+        body {
+          background-color: transparent !important;
+        }
+        body::before {
+          content: '';
+          position: fixed;
+          inset: 0;
+          z-index: -2;
+          background-color: #e8ddd0;
+        }
+        body::after {
+          content: none;
+        }
+        body > header,
+        body header:first-of-type {
+          background: rgba(232,221,208,0.88) !important;
+          border-bottom-color: rgba(176,134,84,0.20) !important;
+          backdrop-filter: blur(8px) !important;
+          -webkit-backdrop-filter: blur(8px) !important;
+        }
+        #contacto,
+        body > footer {
+          background: rgba(205,190,170,0.92) !important;
+          backdrop-filter: blur(6px);
+          -webkit-backdrop-filter: blur(6px);
+        }
+        #contacto .border-t {
+          border-color: rgba(176,134,84,0.20) !important;
+        }
+      `}</style>
+    <div className="flex flex-1 items-center justify-center p-4 sm:p-8">
+      <article className="relative flex w-full max-w-[1024px] aspect-[1024/1500] flex-col overflow-hidden rounded-sm  px-8 sm:px-14 py-10 sm:py-14 shadow-2xl text-[#3a2611]"
+          style={{ background: "rgba(232,221,208,0.45)" }}
+        >
 
         {/* Header */}
         <header className="flex flex-col items-center text-center">
@@ -86,7 +120,7 @@ export default function MaterialidadProyecto() {
             <Leaf className="mt-3 h-5 w-5 text-[#b08654]/70" />
 
             <p
-              className="mt-1 font-serif tracking-[0.28em] text-[#3a2611]/80"
+              className="mt-1 font-serif tracking-[0.28em] text-[#b08654]"
               style={{ fontSize: "clamp(0.65rem,0.85vw,0.78rem)" }}
             >
               MATERIALIDAD
@@ -112,7 +146,7 @@ export default function MaterialidadProyecto() {
 
         {/* Paleta Natural */}
         <section className="mt-7 flex flex-col items-center">
-          <span aria-hidden className="block h-px w-12 bg-[#b08654]/60" />
+          <span aria-hidden className="block h-px w-20 bg-[#b08654]/60" />
           <h2
             className="mt-3 font-serif tracking-[0.42em]"
             style={{ fontSize: "clamp(0.85rem,1.2vw,1.05rem)" }}
@@ -206,5 +240,6 @@ export default function MaterialidadProyecto() {
         </footer>
       </article>
     </div>
+    </>
   );
 }

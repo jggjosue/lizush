@@ -2,71 +2,108 @@ import { Leaf } from "../../_components/Leaf";
 
 export default function PerasComedor() {
   return (
-    <div className="flex flex-1 items-center justify-center bg-[#0e0805] p-4 sm:p-8">
-      <article
-        className="relative w-full max-w-[1024px] aspect-[1024/1500] overflow-hidden rounded-sm shadow-2xl"
-        style={{
-          backgroundImage: "url(/img/33.png)",
-          backgroundSize: "cover",
-          backgroundPosition: "center top",
-        }}
-      >
-        {/* Gradient overlay — lighter top, dark bottom */}
-        <div
-          aria-hidden
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(180deg, rgba(8,5,3,0.18) 0%, rgba(8,5,3,0.0) 38%, rgba(8,5,3,0.0) 52%, rgba(8,5,3,0.88) 100%)",
-          }}
-        />
+    <>
+      <style>{`
+        body {
+          background-color: transparent !important;
+        }
+        body::before {
+          content: '';
+          position: fixed;
+          inset: 0;
+          z-index: -2;
+          background-image: url('/img/33.png');
+          background-size: cover;
+          background-position: center top;
+        }
+        body::after {
+          content: '';
+          position: fixed;
+          inset: 0;
+          z-index: -1;
+          background: linear-gradient(
+            180deg,
+            rgba(8,5,3,0.52) 0%,
+            rgba(8,5,3,0.10) 22%,
+            rgba(8,5,3,0.05) 55%,
+            rgba(8,5,3,0.50) 82%,
+            rgba(8,5,3,0.82) 100%
+          );
+        }
+        body > header,
+        body header:first-of-type {
+          background: rgba(8,5,3,0.22) !important;
+          border-bottom-color: rgba(201,169,120,0.12) !important;
+        }
+        #contacto,
+        body > footer {
+          background: rgba(8,5,3,0.68) !important;
+          backdrop-filter: blur(6px);
+          -webkit-backdrop-filter: blur(6px);
+        }
+        #contacto .border-t {
+          border-color: rgba(201,169,120,0.15) !important;
+        }
+      `}</style>
 
-        <div className="relative z-10 flex h-full flex-col items-center justify-end px-8 sm:px-14 pb-12 sm:pb-16 text-sand text-center">
-          {/* RESIDENCIAL label with flanking lines */}
-          <div className="flex w-full max-w-[420px] items-center justify-center gap-4">
-            <span className="h-px flex-1 bg-[#c9a978]/60" />
+      <div className="flex flex-1 flex-col items-center justify-between text-sand text-center px-8 sm:px-14 pt-10 pb-10 min-h-[calc(100vh-0px)]">
+
+        {/* Top: project label + title */}
+        <header className="flex flex-col items-center mt-8 sm:mt-14 gap-3">
+          <Leaf className="h-5 w-5 text-[#c9a978]/85 mb-1" />
+          <div className="flex w-full max-w-[300px] items-center gap-4">
+            <span className="h-px flex-1 bg-[#c9a978]/55" />
             <span
-              className="font-serif tracking-[0.55em] text-sand-soft"
-              style={{ fontSize: "clamp(0.75rem,1.1vw,0.95rem)" }}
+              className="font-serif tracking-[0.58em] text-[#c9a978]"
+              style={{ fontSize: "clamp(0.58rem,0.85vw,0.72rem)" }}
             >
               RESIDENCIAL
             </span>
-            <span className="h-px flex-1 bg-[#c9a978]/60" />
+            <span className="h-px flex-1 bg-[#c9a978]/55" />
           </div>
 
-          {/* Project title */}
           <h1
-            className="mt-4 font-serif font-light leading-none tracking-[0.04em] text-sand"
-            style={{ fontSize: "clamp(3.5rem,9vw,7rem)" }}
+            className="font-serif font-light leading-none tracking-[0.08em] text-sand"
+            style={{ fontSize: "clamp(3rem,8.5vw,6.8rem)", textShadow: "0 2px 28px rgba(8,5,3,0.60)" }}
           >
             PERAS
           </h1>
 
-          {/* Location */}
+          <span aria-hidden className="block h-px w-20 bg-[#c9a978]/80" />
+
           <p
-            className="mt-4 font-serif tracking-[0.55em] text-sand-soft"
-            style={{ fontSize: "clamp(0.75rem,1.05vw,0.95rem)" }}
+            className="font-serif tracking-[0.58em] text-[#c9a978]"
+            style={{ fontSize: "clamp(0.65rem,1vw,0.85rem)" }}
           >
             HIDALGO, PACHUCA
           </p>
 
-          {/* Leaf + branding */}
-          <Leaf className="mt-8 h-6 w-6 text-[#c9a978]" />
+          <p
+            className="font-serif tracking-[0.42em] text-sand-soft/65"
+            style={{ fontSize: "clamp(0.60rem,0.88vw,0.76rem)" }}
+          >
+            COMEDOR
+          </p>
+        </header>
 
+        {/* Bottom branding */}
+        <footer className="flex flex-col items-center gap-2 pb-4">
+          <Leaf className="h-6 w-6 text-[#c9a978]" />
           <span
-            className="mt-3 font-serif font-light tracking-[0.42em] text-sand"
-            style={{ fontSize: "clamp(1.4rem,2.4vw,2rem)" }}
+            className="font-serif font-light tracking-[0.42em] text-sand"
+            style={{ fontSize: "clamp(1.2rem,2.2vw,1.8rem)" }}
           >
             LIZUSH
           </span>
           <span
-            className="font-serif tracking-[0.42em] text-sand-soft"
-            style={{ fontSize: "clamp(0.7rem,1vw,0.9rem)" }}
+            className="font-serif tracking-[0.42em] text-sand-soft/80"
+            style={{ fontSize: "clamp(0.62rem,0.92vw,0.80rem)" }}
           >
             ARCHITECT STUDIO
           </span>
-        </div>
-      </article>
-    </div>
+        </footer>
+
+      </div>
+    </>
   );
 }
