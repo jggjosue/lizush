@@ -15,7 +15,8 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   const [lang, setLang] = useState<Lang>("es");
 
   useEffect(() => {
-    const saved = localStorage.getItem("lizush-lang") as Lang | null;
+    const saved = localStorage.getItem("lizush-lang");
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (saved === "es" || saved === "en") setLang(saved);
   }, []);
 

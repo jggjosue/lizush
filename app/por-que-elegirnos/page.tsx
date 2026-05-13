@@ -77,7 +77,7 @@ export default function PorQueElegirnos() {
   );
 }
 
-function ReasonRow({ number, reason }: { number: string; reason: { title: string; bullets: string[]; desc: string } }) {
+function ReasonRow({ number, reason }: { number: string; reason: { title: string; bullets: readonly string[]; desc: string } }) {
   return (
     <div className="flex flex-col">
       <span className="font-serif text-[#b08654]/80 leading-none" style={{ fontSize: "clamp(1.2rem,1.8vw,1.6rem)" }}>
