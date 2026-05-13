@@ -45,7 +45,7 @@ export default function EstadioTenisMTQ() {
           >
             ESTADIO
             <br />
-            DE TENIS MTQ
+            DE TENIS MQ
           </h1>
 
           {/* Gold rule */}
@@ -56,7 +56,7 @@ export default function EstadioTenisMTQ() {
             className="mt-4 font-serif tracking-[0.52em] text-sand-soft"
             style={{ fontSize: "clamp(0.68rem,1vw,0.88rem)" }}
           >
-            MORELOS
+            GUADALAJARA
           </p>
         </div>
       </article>

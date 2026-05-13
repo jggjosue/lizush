@@ -3,6 +3,8 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useLanguage } from "../_context/LanguageContext";
+import { t } from "../_i18n/translations";
 
 const LIGHT_PAGES = [
   "/servicios",
@@ -16,12 +18,15 @@ const LIGHT_PAGES = [
   "/proyectos/interior-design",
   "/proyectos/urbanos",
   "/proyectos/diseno-urbano",
+  "/servicios-1",
 ];
 
 export function Footer() {
   const year = new Date().getFullYear();
   const pathname = usePathname();
   const isLight = LIGHT_PAGES.includes(pathname);
+  const { lang } = useLanguage();
+  const T = t[lang].footer;
 
   const footerCls = isLight
     ? "border-t border-[#b08654]/20 bg-[#ece2cc] text-[#3a2611]"
@@ -55,39 +60,34 @@ export function Footer() {
         <div className="flex flex-col gap-3">
           <span className={brandCls}>LIZUSH</span>
           <span className={tagCls}>ARCHITECT STUDIO</span>
-          <p className={italicCls}>
-            &ldquo;Designing spaces that communicate, inspire and connect.&rdquo;
-          </p>
+          <p className={italicCls}>{T.quote}</p>
         </div>
 
-        <Column heading="SÍGUENOS" headingCls={headingCls} bodyCls={bodyCls}>
-          <Link className={linkHover} href="https://instagram.com/lizush_architect">
+        <Column heading={T.follow} headingCls={headingCls} bodyCls={bodyCls}>
+          <Link className={linkHover} href="https://instagram.com/lizush_architect" target="_blank" rel="noopener noreferrer">
             Instagram — @lizush_architect
           </Link>
-          <Link className={linkHover} href="https://pinterest.com/lizush_architect">
+          <Link className={linkHover} href="https://www.pinterest.com/lizusharch/" target="_blank" rel="noopener noreferrer">
             Pinterest — @lizush_architect
           </Link>
-          <Link className={linkHover} href="https://behance.net/lizush_architect">
-            Behance — @lizush_architect
-          </Link>
-          <Link className={linkHover} href="https://www.linkedin.com/company/lizush-architect-studio">
+          <Link className={linkHover} href="https://www.linkedin.com/company/lizush-architect" target="_blank" rel="noopener noreferrer">
             LinkedIn — Lizush Architect Studio
           </Link>
         </Column>
 
-        <Column heading="CONTACTO" headingCls={headingCls} bodyCls={bodyCls}>
+        <Column heading={T.contact} headingCls={headingCls} bodyCls={bodyCls}>
           <span>Arq. Elizabeth Guzmán</span>
           <Link className={linkHover} href="mailto:elizabethguzman@lizusharchitect.com">
             elizabethguzman@lizusharchitect.com
           </Link>
-          <span>Ciudad de México, MX</span>
+          <span>{T.city}</span>
         </Column>
       </div>
 
       <div className={bottomBorder}>
         <div className={bottomText}>
           <span>© {year} LIZUSH ARCHITECT STUDIO</span>
-          <span>ARCHITECTURE | INTERIOR DESIGN | VISUALIZATION</span>
+          <span>{T.rights}</span>
         </div>
       </div>
     </footer>

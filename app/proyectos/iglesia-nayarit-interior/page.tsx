@@ -28,29 +28,17 @@ export default function IglesiaNayaritInterior() {
             }}
           />
 
-          {/* Two detail photos side by side */}
-          <div className="grid grid-cols-2 gap-4 flex-[3] min-h-0">
-            <div
-              role="img"
-              aria-label="Detalle banca y pasillo"
-              className="w-full h-full rounded-sm shadow-md"
-              style={{
-                backgroundImage: "url(/img/28.png)",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            />
-            <div
-              role="img"
-              aria-label="Detalle banca de madera"
-              className="w-full h-full rounded-sm shadow-md"
-              style={{
-                backgroundImage: "url(/img/28.png)",
-                backgroundSize: "cover",
-                backgroundPosition: "right center",
-              }}
-            />
-          </div>
+          {/* Detail photo */}
+          <div
+            role="img"
+            aria-label="Detalle banca y pasillo"
+            className="w-full rounded-sm shadow-md flex-[3] min-h-0"
+            style={{
+              backgroundImage: "url(/img/28.png)",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          />
 
           {/* Text block + Badge */}
           <footer className="flex flex-col items-center text-center text-[#3a2611] flex-[2] justify-center gap-2">

@@ -70,7 +70,7 @@ export default function LomasTecamachalco() {
             className="font-serif tracking-[0.55em] text-sand-soft"
             style={{ fontSize: "clamp(0.68rem,1vw,0.88rem)" }}
           >
-            HUSIQUILUXAN
+            HUIXQUILUCAN
           </p>
         </header>
 

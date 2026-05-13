@@ -12,7 +12,7 @@ export default function SalaPolivalente() {
           position: fixed;
           inset: 0;
           z-index: -2;
-          background-image: url('/img/50.png');
+          background-image: url('/img/6-eli.png');
           background-size: cover;
           background-position: center;
         }

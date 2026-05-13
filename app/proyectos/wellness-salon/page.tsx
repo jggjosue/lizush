@@ -60,35 +60,14 @@ export default function WellnessSalon() {
           {/* Main photo */}
           <div
             role="img"
-            aria-label="Recepción Wellness Salon"
-            className="w-full rounded-sm shadow-lg flex-[4] min-h-0"
+            aria-label="Lobby Wellness Salon"
+            className="w-full rounded-sm shadow-lg flex-[6] min-h-0"
             style={{
-              backgroundImage: "url(/img/27.png)",
+              backgroundImage: "url(/img/31.png)",
               backgroundSize: "cover",
-              backgroundPosition: "center",
+              backgroundPosition: "center top",
             }}
           />
-
-          {/* Three detail photos */}
-          <div className="grid grid-cols-3 gap-3 flex-[2.2] min-h-0">
-            {[
-              { img: "31", pos: "center top", label: "Lobby" },
-              { img: "48", pos: "center", label: "Wellness room" },
-              { img: "3",  pos: "center", label: "Lounge" },
-            ].map(({ img, pos, label }) => (
-              <div
-                key={img}
-                role="img"
-                aria-label={label}
-                className="w-full h-full rounded-sm shadow-md"
-                style={{
-                  backgroundImage: `url(/img/${img}.png)`,
-                  backgroundSize: "cover",
-                  backgroundPosition: pos,
-                }}
-              />
-            ))}
-          </div>
 
           {/* Tagline + description */}
           <div className="flex flex-col items-center text-center gap-1.5 pt-1">

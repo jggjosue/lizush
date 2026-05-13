@@ -81,54 +81,46 @@ export default function ProyectosUrbanos() {
             <span aria-hidden className="mt-1.5 block h-px w-10 bg-[#b08654]/60" />
           </header>
 
-          {/* Main: large photo left + concepto right */}
-          <div className="grid grid-cols-[60%_40%] gap-3 flex-[2.6] min-h-0">
-            <div
-              role="img"
-              aria-label="Parque urbano con espejo de agua"
-              className="h-full w-full rounded-sm shadow-md"
-              style={{
-                backgroundImage: "url(/img/36.png)",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            />
-            <div className="flex flex-col gap-2 pt-1">
-              <h2 className="font-serif font-semibold tracking-[0.06em]" style={{ fontSize: "clamp(0.82rem,1.3vw,1.05rem)" }}>
-                CONCEPTO
-              </h2>
-              <p className="font-serif leading-relaxed text-[#3a2611]/85" style={{ fontSize: "clamp(0.6rem,0.85vw,0.75rem)" }}>
-                Diseño urbano integral enfocado en la conexión entre espacio, naturaleza y comunidad.
-              </p>
-              <span aria-hidden className="block h-px w-8 bg-[#b08654]/55" />
-              <ul className="flex flex-col gap-1.5">
-                {["Conectividad peatonal", "Integración de áreas verdes", "Sensibilidad al contexto", "Experiencia urbana"].map((item) => (
-                  <li key={item} className="flex items-start gap-1.5">
-                    <span className="mt-[0.45em] font-serif text-[#b08654]" style={{ fontSize: "clamp(0.58rem,0.82vw,0.72rem)" }}>–</span>
-                    <span className="font-serif text-[#3a2611]/80" style={{ fontSize: "clamp(0.58rem,0.82vw,0.72rem)" }}>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          {/* Main photo */}
+          <div
+            role="img" aria-label="Parque urbano"
+            className="w-full rounded-sm shadow-md flex-[3] min-h-[180px]"
+            style={{ backgroundImage: "url(/img/36.png)", backgroundSize: "cover", backgroundPosition: "center 40%" }}
+          />
+
+          {/* 3 photos row */}
+          <div className="grid grid-cols-3 gap-2 flex-[2] min-h-[120px]">
+            {[
+              { img: "44", pos: "center", label: "Borde lago urbano" },
+              { img: "42", pos: "center", label: "Ciclovía parque" },
+              { img: "43", pos: "center", label: "Mapa urbano" },
+            ].map(({ img, pos, label }) => (
+              <div
+                key={img}
+                role="img" aria-label={label}
+                className="h-full w-full rounded-sm shadow-sm"
+                style={{ backgroundImage: `url(/img/${img}.png)`, backgroundSize: "cover", backgroundPosition: pos }}
+              />
+            ))}
           </div>
 
-          {/* Bottom photos: 2 small + 1 map */}
-          <div className="grid grid-cols-3 gap-3 flex-[1.8] min-h-0">
-            <div
-              role="img" aria-label="Borde lago urbano"
-              className="h-full w-full rounded-sm shadow-md"
-              style={{ backgroundImage: "url(/img/44.png)", backgroundSize: "cover", backgroundPosition: "center" }}
-            />
-            <div
-              role="img" aria-label="Ciclovía parque"
-              className="h-full w-full rounded-sm shadow-md"
-              style={{ backgroundImage: "url(/img/42.png)", backgroundSize: "cover", backgroundPosition: "center" }}
-            />
-            <div
-              role="img" aria-label="Mapa urbano"
-              className="h-full w-full rounded-sm shadow-md overflow-hidden"
-              style={{ backgroundImage: "url(/img/43.png)", backgroundSize: "cover", backgroundPosition: "center" }}
-            />
+          {/* Concepto */}
+          <div className="flex-[1.4] flex flex-col gap-1.5 pt-1">
+            <h2 className="font-serif font-semibold tracking-[0.06em]" style={{ fontSize: "clamp(0.82rem,1.3vw,1.05rem)" }}>
+              CONCEPTO
+            </h2>
+            <p className="font-serif leading-relaxed text-[#3a2611]/85" style={{ fontSize: "clamp(0.6rem,0.85vw,0.75rem)" }}>
+              Diseño urbano integral enfocado en la conexión entre espacio, naturaleza y comunidad.
+            </p>
+            <span aria-hidden className="block h-px w-8 bg-[#b08654]/55" />
+            <ul className="flex flex-col gap-1">
+              {["Conectividad peatonal", "Integración de áreas verdes", "Sensibilidad al contexto", "Experiencia urbana"].map((item) => (
+                <li key={item} className="flex items-start gap-1.5">
+                  <span className="mt-[0.45em] font-serif text-[#b08654]" style={{ fontSize: "clamp(0.58rem,0.82vw,0.72rem)" }}>–</span>
+                  <span className="font-serif text-[#3a2611]/80" style={{ fontSize: "clamp(0.58rem,0.82vw,0.72rem)" }}>{item}</span>
+                </li>
+              ))}
+            </ul>
           </div>
 
           {/* 4 circle icons */}

@@ -3,6 +3,7 @@ import { Geist, Cormorant_Garamond, Dancing_Script } from "next/font/google";
 import "./globals.css";
 import { Header } from "./_components/Header";
 import { Footer } from "./_components/Footer";
+import { LanguageProvider } from "./_context/LanguageContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,10 +38,12 @@ export default function RootLayout({
       lang="es"
       className={`${geistSans.variable} ${cormorant.variable} ${dancing.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-[#0e0805]">
-        <Header />
-        <main className="flex flex-1 flex-col">{children}</main>
-        <Footer />
+      <body className="min-h-full flex flex-col bg-[#0e0805]" suppressHydrationWarning>
+        <LanguageProvider>
+          <Header />
+          <main className="flex flex-1 flex-col">{children}</main>
+          <Footer />
+        </LanguageProvider>
       </body>
     </html>
   );

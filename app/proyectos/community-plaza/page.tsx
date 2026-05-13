@@ -161,32 +161,6 @@ export default function CommunityPlaza() {
                   </li>
                 ))}
               </ul>
-              {/* Compass + plan */}
-              <div className="mt-auto flex items-end gap-2">
-                <div className="flex flex-col items-center gap-0.5">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.2} strokeLinecap="round" className="text-[#3a2611]/50" style={{ width: "clamp(18px,2.8vw,26px)", height: "clamp(18px,2.8vw,26px)" }}>
-                    <circle cx="12" cy="12" r="9" />
-                    <path d="M12 3v2M12 19v2M3 12h2M19 12h2" />
-                    <path d="M12 8l2 4-2 4-2-4 2-4z" fill="currentColor" opacity="0.3" />
-                  </svg>
-                  <span className="font-serif text-[#3a2611]/50" style={{ fontSize: "clamp(0.38rem,0.52vw,0.46rem)" }}>N</span>
-                </div>
-                <div
-                  className="flex-1 rounded-sm border border-[#b08654]/40 overflow-hidden"
-                  style={{ height: "clamp(36px,6vw,55px)" }}
-                >
-                  <div
-                    role="img"
-                    aria-label="Plano de conjunto"
-                    className="h-full w-full"
-                    style={{
-                      backgroundImage: "url(/img/43.png)",
-                      backgroundSize: "cover",
-                      backgroundPosition: "center",
-                    }}
-                  />
-                </div>
-              </div>
             </div>
           </div>
 
@@ -202,13 +176,11 @@ export default function CommunityPlaza() {
             }}
           />
 
-          {/* Bottom strip — 4 photos */}
-          <div className="grid grid-cols-4 gap-2 flex-[1.2] min-h-0">
+          {/* Bottom strip — 2 photos */}
+          <div className="grid grid-cols-2 gap-2 flex-[1.2] min-h-0">
             {[
               { img: "49", pos: "left center" },
               { img: "49", pos: "center bottom" },
-              { img: "50", pos: "center top" },
-              { img: "44", pos: "center" },
             ].map(({ img, pos }, i) => (
               <div
                 key={i}
