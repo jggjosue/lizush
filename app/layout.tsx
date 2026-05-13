@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "./_components/Header";
 import { Footer } from "./_components/Footer";
 import { LanguageProvider } from "./_context/LanguageContext";
+import { Analytics } from "@vercel/analytics/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -44,6 +45,7 @@ export default function RootLayout({
           <main className="flex flex-1 flex-col">{children}</main>
           <Footer />
         </LanguageProvider>
+        <Analytics />
       </body>
     </html>
   );
